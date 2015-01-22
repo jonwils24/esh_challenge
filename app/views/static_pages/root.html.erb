@@ -1,0 +1,21 @@
+<h1>Education SuperHighway</h1>
+
+<table style="width: 50%">
+  <tr>
+    <td>Name</td>
+    <td>BEN</td>
+    <td>Avg Cost per MB</td>
+  </tr>
+  <% @schools.each do |school| %>
+  <tr>
+    <td><%= school.name %></td>
+    <td><%= school.ben %></td>
+    <td><%= school.average_cost_per_mb %></td>
+  </tr>
+  <% end %>
+</table>
+
+
+
+<%= column_chart School.group(:ben).sum(:average_cost) %>
+

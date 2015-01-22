@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ben: MyString
+  bandwith: 1
+  measure: MyString
+  cost: 1
+
+two:
+  ben: MyString
+  bandwith: 1
+  measure: MyString
+  cost: 1
