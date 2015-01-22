@@ -1,5 +1,5 @@
 class SchoolPurchase < ActiveRecord::Base
-  after_touch :set_portion_of_average
+  # after_touch :set_portion_of_average
   validates :ben, presence: true
   
   belongs_to(
@@ -8,8 +8,6 @@ class SchoolPurchase < ActiveRecord::Base
     foreign_key: :ben,
     class_name: "School"
   )
-  
-  
   
   def calculate_mbs
     measure = self.measure
@@ -29,6 +27,10 @@ class SchoolPurchase < ActiveRecord::Base
   def average_cost_per_purchase
     self.cost / self.calculate_mbs
   end
+  
+  # the below functions were for the purpose of setting each purchases portion of
+  # the total average, I was hoping to use this portioin of average field in the
+  # column chart to sum it up for each purchase.  It did not work.
   
   def same_ben_purchases
     SchoolPurchase.all.select { |purchase| purchase.ben == self.ben }
