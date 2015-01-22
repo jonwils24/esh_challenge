@@ -31,3 +31,4 @@ end
 
 gem 'bcrypt', '~> 3.1.7'
 gem 'chartkick'
+gem 'newrelic_rpm'
